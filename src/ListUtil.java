@@ -30,9 +30,10 @@ public class ListUtil {
 
 	/**
 	 * 
-	 * @param array
-	 * @param element
-	 * @return
+	 * @param array of the elements
+	 * @param element to find the index
+	 * @return the index of the element
+	 * @throws IllegalArgumentException if the element is null
 	 */
 	public static <T extends Comparable<? super T>> int binarySearch(T[] array, T element) {
 

@@ -36,7 +36,7 @@ public class ListUtilTest {
 	public void testHugeList() {
 		String[] text = new String[99];
 		for (int i = 0; i < text.length; i++) {
-			text[i] = Math.random() * 99 + "";
+			text[i] = i * 99 + "";
 		}
 		List<String> temp = new ArrayList<String>();
 		temp.addAll(Arrays.asList(text));
