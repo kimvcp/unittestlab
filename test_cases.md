@@ -2,17 +2,19 @@
 
 | Test Cases   | Expected Result              |
 | :---         |     :---:                    |
-| Empty list   | return 0                     |
+| empty list   | return 0                     |
+| one item     | return 1                     |
 | n items many times | return n               | 
-| Null list    | throw NullPointerException   |
-| Huge list n items  | return n               |
+| null list    | throw NullPointerException   |
+| huge list n items  | return n               |
 
 
 # Problem 2: Binary Search
 
-| Test Cases   | Input          | Output        |
-| :---         |     :---:      |          ---: |
-| Borderline   | git status     | git status    |
-| Typical      | git diff       | git diff      |
-| Impossible   | git diff       | git diff      |
-| Extreme      | git diff       | git diff      |
+| Test Cases   | Expected Result                     |
+| :---         |     :---:                           |
+| empty array  | return 0                            |
+| search not found      | return -1                  |
+| null item | throw IllegalArgumentException         |
+| sort array  | sort array and return searched index |
+| huge array n items  | return index of n            |
