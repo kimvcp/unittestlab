@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * Test methods for ListUtil class using JUnit 4.
+ * Test methods for ListUtil class using JUnit.
  *
  * @author Vichaphol Thamsuthikul
  *
@@ -23,7 +23,10 @@ public class ListUtilTest {
 	@Test
 	public void testTypicalList() {
 		List<?> temp = Arrays.asList("a", "a", "b", "c", "d");
+		List<?> temp2 = Arrays.asList(12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12);
 		assertEquals(4, ListUtil.countUnique(temp));
+		assertEquals(1, ListUtil.countUnique(temp2));
+
 	}
 
 	@Test(expected = NullPointerException.class)
@@ -42,4 +45,35 @@ public class ListUtilTest {
 		temp.addAll(Arrays.asList(text));
 		assertEquals(99, ListUtil.countUnique(temp));
 	}
+
+	// Test binarySearch methods
+
+	@Test
+	public void testEmptyArray() {
+		String[] number = {};
+		int index = ListUtil.binarySearch(number, "");
+		assertEquals(-1, index);
+	}
+
+	@Test
+	public void testNoElementArray() {
+		String[] text = { "a", "b", "c" };
+		int sortArray = ListUtil.binarySearch(text, "dfg");
+		assertEquals(-1, sortArray);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testNullElement() {
+		Integer[] array = { 1, 2 };
+		int index = ListUtil.binarySearch(array, null);
+	}
+	
+	@Test
+	public void testSortedArray() {
+		Integer[] number = { 3, 2, 6 };
+		assertEquals(0, ListUtil.binarySearch(number, 2));
+		assertEquals(1, ListUtil.binarySearch(number, 3));
+		assertEquals(2, ListUtil.binarySearch(number, 6));
+	}
+
 }
